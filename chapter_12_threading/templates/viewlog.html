@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<h2>{{ the_title }}</h2>
+
+<table>
+    <tr>
+        {% for row_title in the_row_titles %}
+            <th>{{row_title}}</th>
+        {% endfor %}
+    </tr>
+    {% for log in the_data %}
+        <tr>
+            <td>{{log.phrase}}</td>
+            <td>{{log.letters}}</td>
+            <td>{{log.remote_addr}}</td>
+            <td>{{log.user_agent}}</td>
+            <td>{{log.res}}</td>
+        </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}
